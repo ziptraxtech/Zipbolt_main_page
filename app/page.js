@@ -22,27 +22,27 @@ export default function HomePage() {
   const solutions = [
     {
       name: 'Zeflash',
-      icon: '⚡',
+      logo: '/logos/zeflash-logo.png',
       title: 'Zeflash — Instant Battery Diagnostics at Charging Stations',
-      image: 'https://images.unsplash.com/photo-1567409378873-888d6fa7debc?w=800&q=80'
+      image: '/solutions/solution-1.png'
     },
     {
       name: 'ZipSure AI',
-      icon: '🤖',
+      logo: '/logos/zipsure-logo.png',
       title: 'ZipSure AI — Intelligent Battery Analytics & Fleet Intelligence',
-      image: 'https://images.unsplash.com/photo-1666875753105-c63a6f3bdc86?w=800&q=80'
+      image: '/solutions/solution-2.png'
     },
     {
       name: 'EV Champ',
-      icon: '📱',
+      logo: '/logos/evchamp-logo.png',
       title: 'EV Champ — The All-in-One EV Owner App',
-      image: 'https://images.pexels.com/photos/11216260/pexels-photo-11216260.jpeg?w=800&q=80'
+      image: '/solutions/solution-3.png'
     },
     {
       name: 'ZipTrax',
-      icon: '🔄',
+      logo: '/logos/logo_3.png',
       title: 'ZipTrax CleanTech Blockchain/CycloChain for battery circular economy & ERG compliance',
-      image: 'https://images.pexels.com/photos/9799757/pexels-photo-9799757.jpeg?w=800&q=80'
+      image: '/solutions/solution-4.png'
     }
   ]
 

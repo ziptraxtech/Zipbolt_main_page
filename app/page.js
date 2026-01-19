@@ -165,8 +165,13 @@ export default function HomePage() {
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full flex items-center space-x-2">
-                    <span className="text-2xl">{solution.icon}</span>
-                    <span className="font-bold text-gray-900">{solution.name}</span>
+                    <Image
+                      src={solution.logo}
+                      alt={solution.name}
+                      width={80}
+                      height={24}
+                      className="h-6 w-auto"
+                    />
                   </div>
                 </div>
                 <CardContent className="p-6">

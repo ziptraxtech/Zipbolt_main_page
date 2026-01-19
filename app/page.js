@@ -133,7 +133,7 @@ export default function HomePage() {
             {/* Right Image */}
             <div className="relative h-[400px] sm:h-[500px] lg:h-[600px]">
               <Image
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1200&q=80"
+                src="https://images.unsplash.com/photo-1520333789090-1afc82db536a?w=1200&q=80"
                 alt="EV Charging App"
                 fill
                 className="object-cover rounded-2xl shadow-2xl"

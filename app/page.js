@@ -136,7 +136,7 @@ export default function HomePage() {
                 src="/hero/main-hero.png"
                 alt="EV Charging App"
                 fill
-                className="object-cover rounded-2xl shadow-2xl"
+                className="object-contain rounded-2xl shadow-2xl"
                 priority
               />
             </div>

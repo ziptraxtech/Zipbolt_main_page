@@ -24,25 +24,29 @@ export default function HomePage() {
       name: 'Zeflash',
       logo: '/logos/zeflash-logo.png',
       title: 'Zeflash — Instant Battery Diagnostics at Charging Stations',
-      image: '/solutions/solution-1.png'
+      image: '/solutions/solution-1.png',
+      url: 'https://zeflash.app/'
     },
     {
       name: 'ZipSure AI',
       logo: '/logos/zipsure-logo.png',
       title: 'ZipSure AI — Intelligent Battery Analytics & Fleet Intelligence',
-      image: '/solutions/solution-2.png'
+      image: '/solutions/solution-2.png',
+      url: 'https://zipsureai.com/'
     },
     {
       name: 'EV Champ',
       logo: '/logos/evchamp-logo.png',
       title: 'EV Champ — The All-in-One EV Owner App',
-      image: '/solutions/solution-3.png'
+      image: '/solutions/solution-3.png',
+      url: 'http://www.evchamp.in/'
     },
     {
       name: 'ZipTrax',
-      logo: '/logos/logo_3.png',
-      title: 'ZipTrax CleanTech Blockchain/CycloChain for battery circular economy & ERG compliance',
-      image: '/solutions/solution-4.png'
+      logo: '/logos/logo_4.png',
+      title: 'ZipTrax CleanTech Blockchain/CycloChain for battery circular economy & EG compliance',
+      image: '/solutions/solution-4.png',
+      url: 'https://ziptrax.in/'
     }
   ]
 
@@ -66,18 +70,20 @@ export default function HomePage() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              <Link href="#about" className="text-gray-700 hover:text-blue-500 transition-colors font-medium">
+              <Link href="/about" className="text-gray-700 hover:text-blue-500 transition-colors font-medium">
                 About us
               </Link>
-              <Link href="#services" className="text-gray-700 hover:text-blue-500 transition-colors font-medium">
+              <Link href="/services" className="text-gray-700 hover:text-blue-500 transition-colors font-medium">
                 Services
               </Link>
               <Link href="#portfolio" className="text-gray-700 hover:text-blue-500 transition-colors font-medium">
                 Portfolio
               </Link>
-              <Button className="bg-gradient-to-r from-gray-700 to-gray-900 hover:from-gray-800 hover:to-black text-white px-6 py-2 rounded-full">
-                Contact us
-              </Button>
+              <Link href="/contact">
+                <Button className="bg-gradient-to-r from-gray-700 to-gray-900 hover:from-gray-800 hover:to-black text-white px-6 py-2 rounded-full">
+                  Contact us
+                </Button>
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}
@@ -93,18 +99,20 @@ export default function HomePage() {
           {mobileMenuOpen && (
             <div className="md:hidden border-t border-gray-200 py-4">
               <div className="flex flex-col space-y-4">
-                <Link href="#about" className="text-gray-700 hover:text-blue-500 transition-colors font-medium px-4 py-2">
+                <Link href="/about" className="text-gray-700 hover:text-blue-500 transition-colors font-medium px-4 py-2">
                   About us
                 </Link>
-                <Link href="#services" className="text-gray-700 hover:text-blue-500 transition-colors font-medium px-4 py-2">
+                <Link href="/services" className="text-gray-700 hover:text-blue-500 transition-colors font-medium px-4 py-2">
                   Services
                 </Link>
                 <Link href="#portfolio" className="text-gray-700 hover:text-blue-500 transition-colors font-medium px-4 py-2">
                   Portfolio
                 </Link>
-                <Button className="bg-gradient-to-r from-gray-700 to-gray-900 hover:from-gray-800 hover:to-black text-white mx-4 rounded-full">
-                  Contact us
-                </Button>
+                <Link href="/contact" className="mx-4">
+                  <Button className="bg-gradient-to-r from-gray-700 to-gray-900 hover:from-gray-800 hover:to-black text-white w-full rounded-full">
+                    Contact us
+                  </Button>
+                </Link>
               </div>
             </div>
           )}
@@ -125,9 +133,11 @@ export default function HomePage() {
               <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed max-w-xl">
                 <span className="font-semibold text-gray-800">ZipBolt is the intelligence layer—</span> the invisible backbone that makes electric mobility smarter, safer and sustainable.
               </p>
-              <Button className="bg-black hover:bg-gray-900 text-white px-8 py-6 text-base lg:text-lg rounded-full transition-all duration-300 hover:scale-105 shadow-lg">
-                Explore Our Solutions
-              </Button>
+              <Link href="#portfolio" className="inline-block mt-4">
+                <Button className="bg-black hover:bg-gray-900 text-white px-8 py-6 text-base lg:text-lg rounded-full transition-all duration-300 hover:scale-105 shadow-lg">
+                  Explore Our Solutions
+                </Button>
+              </Link>
             </div>
 
             {/* Right Image */}
@@ -156,28 +166,36 @@ export default function HomePage() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {solutions.map((solution, index) => (
-              <Card key={index} className="bg-gray-900 border-gray-800 overflow-hidden group hover:border-blue-500 transition-all duration-300 hover:scale-105 cursor-pointer">
-                <div className="relative h-48 sm:h-56 overflow-hidden">
-                  <Image
-                    src={solution.image}
-                    alt={solution.name}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full flex items-center space-x-2">
+              <Link
+                key={index}
+                href={solution.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <Card className="bg-gray-900 border-gray-800 overflow-hidden group hover:border-blue-500 transition-all duration-300 hover:scale-105 cursor-pointer">
+                  <div className="relative h-48 sm:h-56 overflow-hidden">
                     <Image
-                      src={solution.logo}
+                      src={solution.image}
                       alt={solution.name}
-                      width={80}
-                      height={24}
-                      className="h-6 w-auto"
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-500"
                     />
+                    <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full flex items-center space-x-2">
+                      <Image
+                        src={solution.logo}
+                        alt={solution.name}
+                        width={80}
+                        height={24}
+                        className="h-6 w-auto"
+                      />
+                    </div>
                   </div>
-                </div>
-                <CardContent className="p-6">
-                  <p className="text-gray-300 text-sm leading-relaxed">{solution.title}</p>
-                </CardContent>
-              </Card>
+                  <CardContent className="p-6">
+                    <p className="text-gray-300 text-sm leading-relaxed">{solution.title}</p>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>
@@ -228,11 +246,13 @@ export default function HomePage() {
           <div className="max-w-3xl">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Get in touch with us</h2>
             <p className="text-gray-400 text-base sm:text-lg leading-relaxed mb-8">
-              If you're ready to explore how our expertise in energy efficiency, LED lighting, photovoltaic energy, and electric mobility can benefit your projects, don't hesitate to reach out. We're here to listen, collaborate, and provide you with tailored solutions that align with your specific needs and goals.
+              If you're ready to explore how Zipbolt’s innovative technology solutions, digital infrastructure, and next-generation energy ecosystems can enhance your projects, we’d love to connect. Our team is here to understand your vision, collaborate closely, and deliver tailored solutions aligned with your goals and long-term growth.
             </p>
-            <Button className="bg-white text-black hover:bg-gray-200 px-8 py-6 text-base lg:text-lg rounded-full font-semibold transition-all duration-300 hover:scale-105">
-              Contact us
-            </Button>
+            <Link href="/contact">
+              <Button className="bg-white text-black hover:bg-gray-200 px-8 py-6 text-base lg:text-lg rounded-full font-semibold transition-all duration-300 hover:scale-105">
+                Contact us
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -245,10 +265,10 @@ export default function HomePage() {
             <div>
               <h3 className="font-bold text-gray-900 mb-4 text-lg">Pages</h3>
               <ul className="space-y-2">
-                <li><Link href="#services" className="text-gray-600 hover:text-blue-500 transition-colors">Services</Link></li>
-                <li><Link href="#about" className="text-gray-600 hover:text-blue-500 transition-colors">About us</Link></li>
+                <li><Link href="/services" className="text-gray-600 hover:text-blue-500 transition-colors">Services</Link></li>
+                <li><Link href="/about" className="text-gray-600 hover:text-blue-500 transition-colors">About us</Link></li>
                 <li><Link href="#portfolio" className="text-gray-600 hover:text-blue-500 transition-colors">Portfolio</Link></li>
-                <li><Link href="#contact" className="text-gray-600 hover:text-blue-500 transition-colors">Contact us</Link></li>
+                <li><Link href="/contact" className="text-gray-600 hover:text-blue-500 transition-colors">Contact us</Link></li>
               </ul>
             </div>
 
@@ -256,8 +276,26 @@ export default function HomePage() {
             <div>
               <h3 className="font-bold text-gray-900 mb-4 text-lg">Social Media</h3>
               <ul className="space-y-2">
-                <li><Link href="#" className="text-gray-600 hover:text-blue-500 transition-colors">Facebook</Link></li>
-                <li><Link href="#" className="text-gray-600 hover:text-blue-500 transition-colors">LinkedIn</Link></li>
+                <li>
+                  <Link
+                    href="https://www.facebook.com/share/1BdtdNCaf2/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-blue-500 transition-colors"
+                  >
+                    Facebook
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="https://www.linkedin.com/company/zipbolt/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-blue-500 transition-colors"
+                  >
+                    LinkedIn
+                  </Link>
+                </li>
               </ul>
             </div>
 
@@ -265,14 +303,32 @@ export default function HomePage() {
             <div>
               <h3 className="font-bold text-gray-900 mb-4 text-lg">Legal</h3>
               <ul className="space-y-2">
-                <li><Link href="#" className="text-gray-600 hover:text-blue-500 transition-colors">Privacy and Cookies Policy</Link></li>
-                <li><Link href="#" className="text-gray-600 hover:text-blue-500 transition-colors">Terms & Conditions</Link></li>
+                <li>
+                  <Link
+                    href="/privacy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-blue-500 transition-colors"
+                  >
+                    Privacy and Cookies Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/terms"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-blue-500 transition-colors"
+                  >
+                    Terms & Conditions
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
 
           <div className="mt-12 pt-8 border-t border-gray-200 text-center text-gray-500 text-sm">
-            <p>© Zipbolt. Energy Consulting ©</p>
+            <p>© 2026 Zipbolt Innovations Private Limited. All rights reserved.</p>
           </div>
         </div>
       </footer>

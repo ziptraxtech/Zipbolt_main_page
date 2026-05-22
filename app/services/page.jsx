@@ -16,7 +16,7 @@ const services = [
       'Ideal for EV fleets, swapping stations, charging hubs, and solo riders.',
       'Available now at selected charging-station partners; expanding fast across metros and satellite cities.',
     ],
-    image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1400&q=80',
+    image: '/services/zeflash-service.png',
   },
   {
     name: 'ZipSure AI',
@@ -27,7 +27,7 @@ const services = [
       'Predictive alerts for anomalies, early warnings for maintenance, and real-time health dashboards.',
       'Built for fleets, OEMs, and large-scale charging or battery-swap operators.',
     ],
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1400&q=80',
+    image: '/services/zipsure-service.png',
   },
   {
     name: 'EV Champ',
@@ -38,7 +38,7 @@ const services = [
       'Book diagnostics, locate compatible charging/swap stations, buy or sell used EVs or batteries, and track performance.',
       'Transparency, convenience, and peace-of-mind - everything an EV owner needs, in one place.',
     ],
-    image: 'https://images.unsplash.com/photo-1502877338535-766e1452684a?w=1400&q=80',
+    image: '/services/evchamp-service.png',
   },
   {
     name: 'Ziptrax Cleantech',
@@ -49,7 +49,7 @@ const services = [
       'Compliance-ready reporting for recycling, reuse, and responsible disposal programs.',
       'Built for regulators, recyclers, OEMs, and energy enterprises.',
     ],
-    image: 'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=1400&q=80',
+    image: '/services/ziptrax-service.png',
   },
 ]
 
@@ -95,14 +95,28 @@ export default function ServicesPage() {
 
       <section className="bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-          <div className="max-w-2xl space-y-4">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-gray-900">Services</h1>
-            <p className="text-sm sm:text-base text-gray-600 max-w-xl leading-relaxed">
-              At Zipbolt Innovations, we engineer the intelligence layer that powers the entire electric mobility ecosystem.
-              Our services are designed to bring accuracy, transparency, and predictive capabilities to every stage of an EV
-              battery&apos;s life - from first use to final recovery. With deeptech, data, and sustainability at the core, we
-              deliver end-to-end solutions for OEMs, fleets, charging networks, and energy enterprises.
-            </p>
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
+            <div className="max-w-2xl space-y-4">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-gray-900">Services</h1>
+              <p className="text-sm sm:text-base text-gray-600 max-w-xl leading-relaxed">
+                At Zipbolt Innovations, we engineer the intelligence layer that powers the entire electric mobility ecosystem.
+                Our services are designed to bring accuracy, transparency, and predictive capabilities to every stage of an EV
+                battery&apos;s life - from first use to final recovery. With deeptech, data, and sustainability at the core, we
+                deliver end-to-end solutions for OEMs, fleets, charging networks, and energy enterprises.
+              </p>
+            </div>
+
+            <div className="w-full flex items-center justify-center">
+              <div className="relative w-full max-w-md">
+                <Image
+                  src="/services/Picture6.png"
+                  alt="Services visual"
+                  width={720}
+                  height={480}
+                  className="object-contain max-h-[420px] mx-auto"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -149,12 +163,12 @@ export default function ServicesPage() {
                           ))}
                         </ul>
                       </div>
-                      <div className="relative w-full h-[320px] sm:h-[420px] lg:h-[520px] rounded-2xl overflow-hidden shadow-2xl">
+                      <div className="relative w-full h-[320px] sm:h-[420px] lg:h-[520px] rounded-2xl overflow-hidden shadow-2xl bg-gray-900 flex items-center justify-center">
                         <Image
                           src={service.image}
                           alt={`${service.name} product preview`}
                           fill
-                          className="object-cover"
+                          className="object-contain"
                         />
                       </div>
                     </div>

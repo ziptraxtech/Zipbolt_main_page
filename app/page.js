@@ -24,28 +24,28 @@ export default function HomePage() {
       name: 'Zeflash',
       logo: '/logos/zeflash-logo.png',
       title: 'Zeflash — Instant Battery Diagnostics at Charging Stations',
-      image: '/solutions/solution-1.png',
+      image: '/solutions/Picture1.png',
       url: 'https://zeflash.app/'
     },
     {
       name: 'ZipSure AI',
       logo: '/logos/zipsure-logo.png',
       title: 'ZipSure AI — Intelligent Battery Analytics & Fleet Intelligence',
-      image: '/solutions/solution-2.png',
+      image: '/solutions/Picture2.png',
       url: 'https://zipsureai.com/'
     },
     {
       name: 'EV Champ',
       logo: '/logos/evchamp-logo.png',
       title: 'EV Champ — The All-in-One EV Owner App',
-      image: '/solutions/solution-3.png',
+      image: '/solutions/Picture3.png',
       url: 'http://www.evchamp.in/'
     },
     {
       name: 'ZipTrax',
       logo: '/logos/logo_4.png',
-      title: 'ZipTrax CleanTech Blockchain/CycloChain for battery circular economy & EG compliance',
-      image: '/solutions/solution-4.png',
+      title: 'ZipTrax CleanTech Blockchain/CycloChain for battery circular economy & ESG compliance',
+      image: '/solutions/Picture4.png',
       url: 'https://ziptrax.in/'
     }
   ]
@@ -154,6 +154,49 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Trusted & Certified Platform Section */}
+      <section className="py-16 lg:py-24 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 lg:mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Trusted & Certified Platform</h2>
+            <p className="text-gray-300 text-base sm:text-lg max-w-3xl mx-auto">Recognized by leading industry bodies and certifications.</p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            {[
+              {
+                title: 'Startup India Certified',
+                src: '/certificates/startup-india-logo-img.png',
+                desc: 'Registered under the Startup India initiative for innovative ventures and growth support.'
+              },
+              {
+                title: 'MSME Registered',
+                src: '/certificates/MSME-Certificate-Service-image.jpg',
+                desc: 'Recognised as an MSME enabling priority access to government schemes and support.'
+              },
+              {
+                title: 'ISO 9001 Certified',
+                src: '/certificates/iso-9001-img.png',
+                desc: 'Maintains a quality management system ensuring consistent service and continuous improvement.'
+              },
+              {
+                title: 'ISO 14001 Certified',
+                src: '/certificates/ISO-14001-Logo-img.png',
+                desc: 'Commits to environmental management practices and sustainable operations.'
+              }
+            ].map((c, i) => (
+              <div key={i} className="bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 rounded-2xl p-6 flex flex-col items-center justify-start min-h-[220px]">
+                <div className="bg-white rounded-xl px-6 py-6 w-full flex items-center justify-center">
+                  <Image src={c.src} alt={c.title} width={220} height={80} className="object-contain max-h-20 sm:max-h-24" />
+                </div>
+                <p className="mt-6 text-white font-semibold text-lg text-center">{c.title}</p>
+                <p className="mt-2 text-slate-300 text-sm text-center max-w-xs">{c.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Our Solutions Section */}
       <section id="portfolio" className="py-16 lg:py-24 bg-black text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -179,7 +222,7 @@ export default function HomePage() {
                       src={solution.image}
                       alt={solution.name}
                       fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-500"
+                      className={`${solution.name === 'EV Champ' ? 'object-contain translate-y-6' : 'object-cover object-top'} group-hover:scale-110 transition-transform duration-500`}
                     />
                     <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full flex items-center space-x-2">
                       <Image
@@ -207,7 +250,7 @@ export default function HomePage() {
           {/* Left Image */}
           <div className="relative h-[400px] lg:h-[600px]">
             <Image
-              src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80"
+              src="/vision/Picture5.png"
               alt="Team collaboration"
               fill
               className="object-cover"
@@ -232,9 +275,11 @@ export default function HomePage() {
               <p className="text-white/90 text-base sm:text-lg leading-relaxed">
                 At ZipBolt, we believe that the future of EV mobility isn't just in changing the vehicles — it's in reimagining safety and sustainability. We envision a world where every EV battery is intelligent, every charge is optimized, and every vehicle is supported by cutting-edge, data-driven intelligence in the backdrop that ensures electric mobility remains clean, efficient, reliable, and Earth-friendly.
               </p>
-              <Button className="bg-white text-cyan-500 hover:bg-gray-100 px-8 py-6 text-base lg:text-lg rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-lg">
-                Learn more
-              </Button>
+              <Link href="/about" className="mt-8">
+                <Button className="bg-white text-cyan-500 hover:bg-gray-100 px-8 py-6 text-base lg:text-lg rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-lg">
+                  Learn more
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
